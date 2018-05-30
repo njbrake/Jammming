@@ -16,9 +16,9 @@ handleSearchChange(e){
     search: e.target.value
   });
 }
-handleSearch(e){
+handleSearch(event){
   this.props.searchSpotify(this.state.search);
-  e.preventDefault();
+  event.preventDefault();
 }
 render(){return(
 <div className="SearchBar">

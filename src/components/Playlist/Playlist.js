@@ -6,7 +6,7 @@ export class Playlist extends React.Component {
 render() {
 return (
   <div className="Playlist">
-    <input value='New Playlist' />
+    <input readOnly='New Playlist' />
       <div className="TrackList">
         <div className="Track">
           <div className="Track-information">
