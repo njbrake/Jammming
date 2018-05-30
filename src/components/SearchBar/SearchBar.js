@@ -1,0 +1,29 @@
+import React from 'react';
+import './SearchBar.css';
+
+export class SearchBar extends React.Component{
+constructor(props){
+  super(props);
+  this.state = {
+    search: 'careless whisper',
+  };
+  this.handleSearchChange = this.handleSearchChange.bind(this);
+  this.handleSearch = this.handleSearch.bind(this);
+}
+
+handleSearchChange(e){
+  this.setState({
+    search: e.target.value
+  });
+}
+handleSearch(e){
+  this.props.searchSpotify(this.state.search);
+  e.preventDefault();
+}
+render(){return(
+<div className="SearchBar">
+  <input onChange = {this.handleSearchChange} placeholder="Enter A Song Title" />
+  <a onClick ={this.handleSearch}>SEARCH</a>
+</div>
+)}
+}
