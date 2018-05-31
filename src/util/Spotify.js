@@ -14,13 +14,15 @@ const scopes = 'user-read-private user-read-email';
       }});
     }
   }
-
-
-  /**
-   * This is an example of a basic node.js script that performs
-   * the Client Credentials oAuth2 flow to authenticate against
-   * the Spotify Accounts.
-   *
-   * For more information, read
-   * https://developer.spotify.com/web-api/authorization-guide/#client_credentials_flow
-   */
+  const authorize = async () => {
+       const authorizeUrl= `https://accounts.spotify.com/authorize?response_type=code&client_id=${clientId}&scope=${scopes}&redirect_uri=${redirectUri}`;
+window.open(authorizeUrl);
+try{
+const response = await fetch(authorizeUrl,{});
+ if(response.ok){
+      const jsonResponse = await response.json();
+      console.log(jsonResponse);
+    }
+  } catch(error) {
+    console.log(error);
+}
