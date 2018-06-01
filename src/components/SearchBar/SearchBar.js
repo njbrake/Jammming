@@ -5,7 +5,7 @@ export class SearchBar extends React.Component{
 constructor(props){
   super(props);
   this.state = {
-    search: 'careless whisper',
+    search: '',
   };
   this.handleSearchChange = this.handleSearchChange.bind(this);
   this.handleSearch = this.handleSearch.bind(this);

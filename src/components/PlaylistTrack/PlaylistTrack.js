@@ -1,28 +1,31 @@
 import React from 'react';
-import './Track.css';
+import './PlaylistTrack.css';
 import {Playlist} from '../Playlist/Playlist';
 
-class Track extends React.Component {
+class PlaylistTrack extends React.Component {
   constructor(props){
     super(props);
+    this.removeFromSpotifyPlaylist=this.removeFromSpotifyPlaylist.bind(this);
     this.handleClick=this.handleClick.bind(this);
   }
   handleClick(){
-    this.props.addToPlaylist();
+    this.removeFromSpotifyPlaylist(this.props.song);
   }
+  removeFromSpotifyPlaylist(song){
 
+}
   render() {
     return (
       <div className="Track">
         <div className="Track-information">
-          <h3>{this.props.song.songName} </h3>
+          <h3>{this.props.song.songName}</h3>
           <p>{this.props.song.artistName} | {this.props.song.albumName}</p>
         </div>
-        <a onClick= {this.handleClick} className="Track-action">+</a>
+        <a onClick={this.handleClick} className="Track-action">-</a>
       </div>
     )
   }
 
 }
 
-export default Track;
+export default PlaylistTrack;
