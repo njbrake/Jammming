@@ -6,15 +6,15 @@ const scopes = 'user-read-private user-read-email';
 
  export let Spotify = {
 
-  search(search)
-  {
-    return fetch(``,{``}).then(response => {return response.json();}).then(
-      jsonResponse => {if(jsonResponse.businesses){
-        return jsonResponse;
-      }});
-    }
-  }
-  const authorize = async () => {
+//  search(search)
+//  {
+//    return fetch(``,{``}).then(response => {return response.json();}).then(
+//      jsonResponse => {if(jsonResponse.businesses){
+//        return jsonResponse;
+///      }});
+//    }
+//},
+const authorize = async () => {
        const authorizeUrl= `https://accounts.spotify.com/authorize?response_type=code&client_id=${clientId}&scope=${scopes}&redirect_uri=${redirectUri}`;
 window.open(authorizeUrl);
 try{
@@ -25,4 +25,6 @@ const response = await fetch(authorizeUrl,{});
     }
   } catch(error) {
     console.log(error);
+}
+}
 }
