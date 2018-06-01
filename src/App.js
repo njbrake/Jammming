@@ -14,7 +14,9 @@ class App extends Component {
     this.searchSpotify=this.searchSpotify.bind(this);
   }
   searchSpotify(search){
-    Spotify.search(search).then(songs => {this.setState({songs: songs})});
+//    Spotify.authorize();
+    Spotify.search(search);
+    //Spotify.search(search).then(songs => {this.setState({songs: songs})});
   }
   render() {
     return (
