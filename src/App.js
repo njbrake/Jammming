@@ -18,19 +18,19 @@ class App extends Component {
     Spotify.search(search).then(songs => {this.setState({songs: songs})});
     console.log('this is what searched Songs looks like');
     console.log(this.state.songs);
-    
-  }
-  addToPlaylist(song){
 
-    console.log('you clicked me');
-    this.setState({playlistSongs:[
-      {
-        artistName: " Wonder",
-        albumName: "Songs in the Key of Life",
-        songName: "Superstition",
-        id: "6"
-      }
-    ] });
+  }
+  addToPlaylist(song,artist,album){
+    let newPlaylistTrack = {
+      artistName: artist,
+      albumName: album,
+      songName: song,
+      id: "6"
+    }
+    this.setState({
+      playlistSongs: this.state.playlistSongs.concat([newPlaylistTrack])
+    });
+
   }
   render() {
     return (

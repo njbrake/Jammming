@@ -11,6 +11,8 @@ return (
   <div className="Playlist">
     <input readOnly='New Playlist' />
       <div className="TrackList">
+    {  console.log('this is props.songs')}
+    {  console.log(this.props.songs)}
     {this.props.songs.map(song => <PlaylistTrack key={song.id} song={song} />)}
       </div>
       <a onClick = {this.saveToSpotify} className="Playlist-save">SAVE TO SPOTIFY</a>
