@@ -15,8 +15,6 @@ class App extends Component {
     this.addToPlaylist=this.addToPlaylist.bind(this);
   }
   searchSpotify(search){
-//    Spotify.authorize();
-    //Spotify.search(search);
     const searchedSongs = [
     {
       artistName: "Stevie Wonder",
