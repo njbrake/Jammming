@@ -15,48 +15,10 @@ class App extends Component {
     this.addToPlaylist=this.addToPlaylist.bind(this);
   }
   searchSpotify(search){
-    const searchedSongs = [
-    {
-      artistName: "Stevie Wonder",
-      albumName: "Songs in the Key of Life",
-      songName: "Superstition",
-      id: "1"
-    },
-    {
-      artistName: " Wonder",
-      albumName: "Songs in the Key of Life",
-      songName: "Superstition",
-      id: "2"
-    },
-    {
-    artistName: "Stevie Wonder",
-    albumName: "Songs in the Key of Life",
-    songName: "check",
-    id: "3"
-    },
-    {
-      artistName: " Wonder",
-      albumName: "Songs in the Key of Life",
-      songName: "Superstition",
-      id: "4"
-    },
-    {
-      artistName: " Wonder",
-      albumName: "Songs in the Key of Life",
-      songName: "Superstition",
-      id: "5"
-    },
-    {
-      artistName: " Wonder",
-      albumName: "Songs in the Key of Life",
-      songName: "Superstition",
-      id: "6"
-    }
-  ]
-    //console.log(searchedSongs);
-    //this.setState({songs: searchedSongs})
-    Spotify.search(search);
-    this.setState({songs: searchedSongs});
+    Spotify.search(search).then(songs => {this.setState({songs: songs})});
+    console.log('this is what searched Songs looks like');
+    console.log(this.state.songs);
+    
   }
   addToPlaylist(song){
 

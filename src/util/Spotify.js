@@ -57,7 +57,8 @@ let expiresIn = null;
           let endpoint = jsonResponse.tracks.items.map(track => ({
             songName: track.name,
             artistName: track.artists[0].name ,
-            albumName:  track.album.name
+            albumName:  track.album.name,
+            id: 1
           }));
       return endpoint;
         }
