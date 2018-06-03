@@ -8,7 +8,7 @@ class Track extends React.Component {
     this.handleClick=this.handleClick.bind(this);
   }
   handleClick(){
-    this.props.addToPlaylist(this.props.song.songName,this.props.song.artistName,this.props.song.albumName);
+    this.props.addToPlaylist(this.props.song);
   }
 
   render() {

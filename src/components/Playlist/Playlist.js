@@ -3,17 +3,35 @@ import './Playlist.css';
 import PlaylistTrack from '../PlaylistTrack/PlaylistTrack';
 
 export class Playlist extends React.Component {
-saveToSpotify(){
-  console.log("you're saving to spotify now");
+  constructor(props)
+  {
+    super(props);
+    this.state =
+    {
+      playlistName: ""
+    };
+    this.handleNameChange = this.handleNameChange.bind(this);
+    this.saveToSpotify = this.saveToSpotify.bind(this);
+  }
+saveToSpotify(event)
+{
+  this.props.saveToSpotify(this.state.playlistName);
+  event.preventDefault();
 }
+
+handleNameChange(e)
+{
+  this.setState({
+    playlistName: e.target.value
+  });
+}
+
 render() {
 return (
   <div className="Playlist">
-    <input readOnly='New Playlist' />
+    <input onChange = {this.handleNameChange} placeholder="New Playlist" />
       <div className="TrackList">
-    {  console.log('this is props.songs')}
-    {  console.log(this.props.songs)}
-    {this.props.songs.map(song => <PlaylistTrack key={song.id} song={song} />)}
+    {this.props.songs.map(song => <PlaylistTrack key={song.id} song={song} removeFromPlaylist= {this.props.removeFromPlaylist}/>)}
       </div>
       <a onClick = {this.saveToSpotify} className="Playlist-save">SAVE TO SPOTIFY</a>
   </div>

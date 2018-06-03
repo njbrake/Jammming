@@ -5,15 +5,12 @@ import {Playlist} from '../Playlist/Playlist';
 class PlaylistTrack extends React.Component {
   constructor(props){
     super(props);
-    this.removeFromSpotifyPlaylist=this.removeFromSpotifyPlaylist.bind(this);
     this.handleClick=this.handleClick.bind(this);
   }
   handleClick(){
-    this.removeFromSpotifyPlaylist(this.props.song);
+    this.props.removeFromPlaylist(this.props.song);
   }
-  removeFromSpotifyPlaylist(song){
 
-}
   render() {
     return (
       <div className="Track">
