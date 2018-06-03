@@ -31,7 +31,7 @@ return (
   <div className="Playlist">
     <input onChange = {this.handleNameChange} placeholder="New Playlist" />
       <div className="TrackList">
-    {this.props.songs.map(song => <PlaylistTrack key={song.id} song={song} removeFromPlaylist= {this.props.removeFromPlaylist}/>)}
+        {this.props.songs.map(song => <PlaylistTrack key={song.id} song={song} removeFromPlaylist= {this.props.removeFromPlaylist}/>)}
       </div>
       <a onClick = {this.saveToSpotify} className="Playlist-save">SAVE TO SPOTIFY</a>
   </div>

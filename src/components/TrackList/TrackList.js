@@ -9,8 +9,7 @@ export class TrackList extends React.Component {
         <div className="SearchResults">
           <h2>Results</h2>
           <div className="TrackList">
-          {this.props.songs.map(song => <Track key={song.id} song = {song} addToPlaylist = {this.props.addToPlaylist} />)}
-
+            {this.props.songs.map(song => <Track key={song.id} song = {song} addToPlaylist = {this.props.addToPlaylist} />)}
           </div>
         </div>
     )

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {TrackList} from './components/TrackList/TrackList';
 import {Playlist} from './components/Playlist/Playlist';
@@ -8,7 +7,8 @@ import {SearchBar} from './components/SearchBar/SearchBar.js';
 
 
 class App extends Component {
-  constructor(props){
+  constructor(props)
+  {
     super(props);
     this.state = {songs: [], playlistSongs: []};
     this.searchSpotify=this.searchSpotify.bind(this);
@@ -20,11 +20,12 @@ class App extends Component {
   searchSpotify(search)
   {
     Spotify.search(search).then(songs =>
-      {
-        this.setState({
-            songs: songs
-          })
-      });
+    {
+      this.setState(
+        {
+          songs: songs
+        })
+    });
   }
 
   saveToSpotify(PlaylistName)
@@ -56,10 +57,10 @@ class App extends Component {
     let newPlaylist = this.state.playlistSongs.slice();
     newPlaylist.splice(removeIndex,1);
     this.setState(
-      {
-        playlistSongs: newPlaylist
-      });
-    }
+    {
+      playlistSongs: newPlaylist
+    });
+  }
 
   render()
   {

@@ -1,13 +1,15 @@
 import React from 'react';
 import './PlaylistTrack.css';
-import {Playlist} from '../Playlist/Playlist';
 
 class PlaylistTrack extends React.Component {
-  constructor(props){
+  constructor(props)
+  {
     super(props);
     this.handleClick=this.handleClick.bind(this);
   }
-  handleClick(){
+
+  handleClick()
+  {
     this.props.removeFromPlaylist(this.props.song);
   }
 
@@ -22,7 +24,6 @@ class PlaylistTrack extends React.Component {
       </div>
     )
   }
-
 }
 
 export default PlaylistTrack;

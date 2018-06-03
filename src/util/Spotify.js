@@ -1,11 +1,8 @@
 
-const clientId = '39aa1c0dc7b047d195e98ccaa5cf9402';
-const clientSecret = '6eb5d1f820f94d378379ceb5b1e9b0b6';
+const clientId = '';
 const redirectUri= 'http://localhost:3000';
-
 const authorizeUrl= `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=${redirectUri}&scope=playlist-modify-public`;
 let accessToken = null;
-let expirationTime = null;
 let tokenType = null;
 let expiresIn = null;
 let userId = null;
@@ -20,7 +17,6 @@ let userId = null;
       {
         return accessToken;
       }else
-
       if(accessToken=== redirectUri + '/')
       {
         window.location.assign(authorizeUrl);
@@ -38,6 +34,7 @@ let userId = null;
         expiresIn = expiresIn[1];
       }
   },
+
   async search(search)
   {
     await this.authenticate();
@@ -62,7 +59,7 @@ let userId = null;
             id: track.id,
             uri: track.uri
           }));
-      return endpoint;
+          return endpoint;
         }
       }
     }catch(error){console.log(error);}

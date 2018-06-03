@@ -1,17 +1,20 @@
 import React from 'react';
 import './Track.css';
-import {Playlist} from '../Playlist/Playlist';
 
 class Track extends React.Component {
-  constructor(props){
+  constructor(props)
+  {
     super(props);
     this.handleClick=this.handleClick.bind(this);
   }
-  handleClick(){
+
+  handleClick()
+  {
     this.props.addToPlaylist(this.props.song);
   }
 
-  render() {
+  render()
+  {
     return (
       <div className="Track">
         <div className="Track-information">
@@ -22,7 +25,6 @@ class Track extends React.Component {
       </div>
     )
   }
-
 }
 
 export default Track;
