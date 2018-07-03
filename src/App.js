@@ -17,7 +17,7 @@ class App extends Component {
     this.saveToSpotify = this.saveToSpotify.bind(this);
   }
 
-  searchSpotify(search)
+  searchSpotify(search) //This function searches spotify
   {
     Spotify.search(search).then(songs =>
     {
@@ -28,7 +28,7 @@ class App extends Component {
     });
   }
 
-  saveToSpotify(PlaylistName)
+  saveToSpotify(PlaylistName) //This function handles saving the user created playlist to their spotify account
   {
     Spotify.playlistSave(PlaylistName,this.state.playlistSongs).then(saved =>
     {
@@ -38,7 +38,7 @@ class App extends Component {
     });
   }
 
-  addToPlaylist(song)
+  addToPlaylist(song) //This function handles the addition of a song to the playlist
   {
     let newPlaylist = this.state.playlistSongs.slice();
     newPlaylist.push(song);
@@ -49,7 +49,7 @@ class App extends Component {
 
   }
 
-  removeFromPlaylist(song)
+  removeFromPlaylist(song) //This function handles the removal of a song from the playlist
   {
     // get index of object with id matching parameter
     let removeIndex = this.state.playlistSongs.map(function(item) { return item.id; }).indexOf(song.id);
